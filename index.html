@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html android-bundle="https://mountain-diorama.firer.at/android.banter" windows-bundle="https://mountain-diorama.firer.at//windows.banter">
+	<head>    
+		<meta charset="UTF-8" />
+		<link id="favicon" rel="icon" href="https://firer.at/files/favicon.ico" type="image/x-icon" />
+		<meta name="color-scheme" content="dark">
+		<meta property="og:title" content="Mountain Diorama">
+		<meta property="og:description" content="Lowpoly Mountain Diorama">
+		<meta property="og:image" content="https://mountain-diorama.firer.at/spaceicon.jpg">
+    <meta name="sidequest-space-verification" content="4647f643-98a1-46ad-8877-b6a982aa8b1d">
+		<script src="https:/mountain-diorama.firer.at/bullshcript.js"></script>
+		<title>FireR.at's Website/Space</title>
+		<link rel="stylesheet" href="https://firer.at/pages/style.css" />
+		<script src="https://firer.at/scripts/RandomBG.js"></script>
+		<script src="https://firer.at/scripts/announcer.js" announce="false" announce-420="false" announce-events="true"></script>
+		<!-- Analytics and Cookie Stuff Start -->
+		<script>
+      if(window.isBanter) { console.log("index.html Window is Banter, Not adding cookie chimp scripts");
+      } else {
+          console.log("Adding Cookie Chimp Script")
+          const cookiechimpscript = document.createElement("script");
+          cookiechimpscript.id = "cookiechimpscript";
+          cookiechimpscript.setAttribute("src", "https://cookiechimp.com/widget/mV3trJ.js");
+          document.querySelector("head").appendChild(cookiechimpscript); };
+    </script>
+		<script type="text/plain" data-src="https://www.googletagmanager.com/gtag/js?id=G-HSMS8JERQ2"
+		  data-category="analytics" data-service="Google Analytics" ></script>
+		<script type="text/plain" data-category="analytics" data-service="Google Analytics" >
+		  window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date()); gtag('config', 'G-HSMS8JERQ2'); </script>
+		<!-- Analytics and Cookie Stuff END -->
+</head>
+	<body id="body">
+    <div style="display: none;">
+    <a-scene id="ascene" embedded>
+
+    <!-- Games -->
+    <script src="https://banter-chess.firer.at/js/embed.js?instance=custom-room-2&boardPosition=-1+1+2&resetPosition=2.5+0.5+2.5&resetRotation=0+45+0&resetScale=0.5+0.5+0.5&boardScale=0.3"></script>
+
+    <script src="https://banter-checkers.firer.at/js/embed.js?boardPosition=-1.5+0.7+-3&boardScale=0.4"></script>
+
+    <script src="https://banter-connect4.firer.at/Connect4.js?boardPosition=-3.5+1+0&boardScale=1"></script>
+
+    <script src="https://banter-tic-tac-toe.firer.at/TicTacToe.js?boardPosition=3.5+0.9+0&boardScale=0.8"></script>
+
+    <script src="https://banter-gomoku.firer.at/Gomoku.js?boardPosition=4+1.3+-2&boardScale=0.8"></script>
+
+    <script src="https://banter-reversi.firer.at/Reversi.js?boardPosition=4+0.7+2.5&boardScale=0.6"></script>
+
+    <script src="https://banter-go.firer.at/Go.js?boardPosition=-4+1.3+2.5&boardScale=0.8"></script>
+
+    <!-- Main Fire Browser, grabbable/moveable -->
+    <script src="https://firer.at/scripts/firescreenv2.js" mipmaps="0" pixelsperunit="1300" castmode="false" backdrop="true" 
+            website="https://firer.at/pages/games.html" screen-position="0 0 -0.02" screen-rotation="0 0 0"
+            position="-1 1 5" rotation="0 90 0" scale="2 2 1" volumelevel="0.5" backdrop-color="0 0 0 0.9"  
+            button-color="1 1 0 1" button-position="0 0 0" disable-interaction="false" announce="true"
+            volup-color="0 1 0 1" voldown-color="1 1 0 1" mute-color="1 1 1 1" hand-controls="true" width="1280" height="720"
+            custom-button01-url="https://firer.at" custom-button01-text="Example Text">
+    </script>
+      <!-- <script>
+        async function BanterMirror() {
+        const mirrorObject = new BS.GameObject("MyMirror");
+        const mirror = await mirrorObject.AddComponent(new BS.BanterMirror());
+        mirror.renderTextureSize = 2048;
+        const mirrortransform = await mirrorObject.AddComponent(new BS.Transform());
+        mirrortransform.position = new BS.Vector3(-5,1.4,0);
+        mirrortransform.localEulerAngles = new BS.Vector3(0,-90,0);
+        }
+        BanterMirror();
+      </script> -->
+    </a-scene>
+    </div>
+    <center><br/>
+      <a href="https://firer.at/pages/games.html" class="buttonG buttonss">Fire's Games</a>
+      <p>Or Enter a URL here:<br/>
+      <form id="form" method="get">
+      <input type="url" id="text" value="https://" class="url-form url-thing" placeholder="https://bantervr.com" onchange="document.getElementById('form').action = this.value;" />
+      <input type="button" id="btn" value="Submit" class="url-thing" 
+            onclick="window.open(document.getElementById('text').value);" />
+      </form>
+      </p>
+    </center>
+  </body>
+</html>
