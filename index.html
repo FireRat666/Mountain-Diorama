@@ -11,6 +11,44 @@
 		<script src="https://mountain-diorama.firer.at/bullshcript.js"></script>
 		<title>FireR.at's Website/Space</title>
 		<link rel="stylesheet" href="https://firer.at/pages/style.css" />
+    <style>
+      .rules {
+        text-align: center;
+        margin: 2em 0;
+      }
+      .tab {
+        overflow: hidden;
+        border: 1px solid #0F0;
+        background-color: #007900;
+      }
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+      .tab button:hover {
+        background-color: #00a200;
+      }
+      .tab button.active {
+        background-color: #003d00;
+      }
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #0F0;
+        border-top: none;
+        animation: fadeEffect 1s;
+      }
+      @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+    </style>
 		<script src="https://firer.at/scripts/RandomBG.js"></script>
 		<script src="https://firer.at/scripts/announcer.js" announce="false" announce-420="false" announce-events="true"></script>
 		<!-- Analytics and Cookie Stuff Start -->
@@ -41,7 +79,7 @@
 
     <script src="https://banter-connect4.firer.at/Connect4.js?boardPosition=31.858+12.245+34.364&boardScale=1&useCustomModels=true&lighting=lit&addLights=false"></script>
 
-    <script src="https://banter-tic-tac-toe.firer.at/TicTacToe.js?boardPosition=-11.593+10.822+37.61&boardScale=1.1&useCustomModels=true&lighting=lit&addLights=false"></script>
+    <script src="https://banter-tic-tac-toe.firer.at/TicTacToe.js?boardPosition=-11.593+11.175+37.61&boardScale=1.1&useCustomModels=true&lighting=lit&addLights=false"></script>
 
     <script src="https://banter-gomoku.firer.at/Gomoku.js?boardPosition=58.52+16.342+-6.52&boardScale=1&useCustomModels=true&lighting=lit&addLights=false"></script>
 
@@ -51,7 +89,7 @@
 
     <!-- Main Fire Browser, grabbable/moveable -->
     <script src="https://firer.at/scripts/firescreenv2.js" mipmaps="0" pixelsperunit="1300" castmode="false" backdrop="true" 
-            website="https://firer.at/pages/games.html" screen-position="0 0 -0.02" screen-rotation="0 0 0"
+            website="https://mountain-diorama.firer.at/" screen-position="0 0 -0.02" screen-rotation="0 0 0"
             position="-1 1 5" rotation="0 90 0" scale="2 2 1" volumelevel="0.5" backdrop-color="0 0 0 0.9"  
             button-color="1 1 0 1" button-position="0 0 0" disable-interaction="false" announce="true"
             volup-color="0 1 0 1" voldown-color="1 1 0 1" mute-color="1 1 1 1" hand-controls="true" width="1280" height="720"
@@ -71,14 +109,75 @@
     </a-scene>
     </div>
     <center><br/>
-      <a href="https://firer.at/pages/games.html" class="buttonG buttonss">Fire's Games</a>
-      <p>Or Enter a URL here:<br/>
-      <form id="form" method="get">
-      <input type="url" id="text" value="https://" class="url-form url-thing" placeholder="https://bantervr.com" onchange="document.getElementById('form').action = this.value;" />
-      <input type="button" id="btn" value="Submit" class="url-thing" 
-            onclick="window.open(document.getElementById('text').value);" />
-      </form>
-      </p>
+      <h1>Welcome to Mountain Diorama and Games</h1>
+      <p>Explore the diorama and enjoy a variety of classic board games. Below you can find the rules for each game available in this space.</p>
+    <div class="rules">
+      <h2>Game Rules</h2>
+
+      <div class="tab">
+        <button class="tablinks" onclick="openGame(event, 'Chess')" id="defaultOpen">Chess</button>
+        <button class="tablinks" onclick="openGame(event, 'Checkers')">Checkers</button>
+        <button class="tablinks" onclick="openGame(event, 'Connect4')">Connect 4</button>
+        <button class="tablinks" onclick="openGame(event, 'TicTacToe')">Tic Tac Toe</button>
+        <button class="tablinks" onclick="openGame(event, 'Gomoku')">Gomoku</button>
+        <button class="tablinks" onclick="openGame(event, 'Reversi')">Reversi</button>
+        <button class="tablinks" onclick="openGame(event, 'Go')">Go</button>
+      </div>
+
+      <div id="Chess" class="tabcontent">
+        <h3>Chess</h3>
+        <p>Chess is a two-player strategy board game played on a checkered board with 64 squares arranged in an 8×8 grid. Each player begins with 16 pieces: one king, one queen, two rooks, two knights, two bishops, and eight pawns. The objective is to checkmate the opponent's king by placing it under an inescapable threat of capture.</p>
+      </div>
+
+      <div id="Checkers" class="tabcontent">
+        <h3>Checkers</h3>
+        <p>Checkers (or draughts) is a strategy board game for two players. The game involves diagonal moves of uniform game pieces and mandatory captures by jumping over opponent pieces. The objective is to capture all of the opponent's pieces or block them so they cannot make a move.</p>
+      </div>
+
+      <div id="Connect4" class="tabcontent">
+        <h3>Connect 4</h3>
+        <p>Connect 4 is a two-player connection game in which the players first choose a color and then take turns dropping one colored disc from the top into a seven-column, six-row vertically suspended grid. The pieces fall straight down, occupying the lowest available space within the column. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs.</p>
+      </div>
+
+      <div id="TicTacToe" class="tabcontent">
+        <h3>Tic Tac Toe</h3>
+        <p>Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.</p>
+      </div>
+
+      <div id="Gomoku" class="tabcontent">
+        <h3>Gomoku (Five in a Row)</h3>
+        <p>Gomoku is an abstract strategy board game. Also called Five in a Row, it is traditionally played with Go pieces (black and white stones) on a Go board. Players alternate turns placing a stone of their color on an empty intersection. The winner is the first player to form an unbroken chain of five stones horizontally, vertically, or diagonally.</p>
+      </div>
+
+      <div id="Reversi" class="tabcontent">
+        <h3>Reversi (Othello)</h3>
+        <p>Reversi is a strategy board game for two players, played on an 8×8 uncheckered board. There are sixty-four identical game pieces called disks, which are light on one side and dark on the other. Players take turns placing disks on the board with their assigned color facing up. During a play, any disks of the opponent's color that are in a straight line and bounded by the disk just placed and another disk of the current player's color are turned over to the current player's color. The object of the game is to have the majority of disks turned to display your color when the last playable empty square is filled.</p>
+      </div>
+
+      <div id="Go" class="tabcontent">
+        <h3>Go (Weiqi/Baduk)</h3>
+        <p>Go is an abstract strategy board game for two players, in which the aim is to surround more territory than the opponent. The game was invented in China more than 2,500 years ago and is believed to be the oldest board game continuously played to the present day. The game's two players, Black and White, take turns placing stones on the vacant intersections of a 19x19 grid. The object of the game is to use one's stones to surround a larger total area of the board than the opponent.</p>
+      </div>
+    </div>
+      <a href="https://firer.at/" class="buttonG buttonss">Fire's Homepage</a>
+  </br>
     </center>
   </body>
+  <script>
+    function openGame(evt, gameName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(gameName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
 </html>
