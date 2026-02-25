@@ -1,4 +1,4 @@
-if(window.isBanter){
+window.addEventListener("bs-loaded", async () => {
   // create a reference to the banter scene
   const dioramascene = BS.BanterScene.GetInstance();
   
@@ -107,4 +107,4 @@ if(window.isBanter){
 
   somerandomStartCrap();
 
-};
+})
