@@ -31,7 +31,7 @@ window.addEventListener("bs-loaded", async () => {
     dioramascene.TeleportTo({x: randomLocationX, y: 0.2, z: randomLocationZ}, 0, true);
     dioramascene.SetSettings(settings);
     console.log("SCRIPT finish setting settings for scene");
-    setTimeout(() => { dioramascene.TeleportTo({x: randomLocationX, y: 0.2, z: randomLocationZ}, 0, true); dioramascene.SetSettings(settings); }, 2000);
+    setTimeout(() => { dioramascene.SetSettings(settings); }, 2000);
   };
 
   async function landingPlatform() {
