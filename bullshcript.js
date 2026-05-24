@@ -1,4 +1,4 @@
-window.addEventListener("bs-loaded", async () => {
+(function () {
   // create a reference to the banter scene
   const dioramascene = BS.BanterScene.GetInstance();
   
@@ -105,6 +105,12 @@ window.addEventListener("bs-loaded", async () => {
       "Normal Gravity"
     );
 
-  somerandomStartCrap();
+//   somerandomStartCrap();
 
-})
+    if (window.BS) {
+        somerandomStartCrap();
+    } else {
+        window.addEventListener("bs-loaded", () => somerandomStartCrap());
+    }
+
+})();
