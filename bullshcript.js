@@ -3,6 +3,7 @@
   async function somerandomStartCrap() {
 	// create a reference to the banter scene
 	const dioramascene = BS.BanterScene.GetInstance();
+	CreateButtonsAndShit();
     const waitingForUnity = async () => { while (!dioramascene.unityLoaded) { await new Promise(resolve => setTimeout(resolve, 500)); } };
     await waitingForUnity(); console.log("SCRIPT: Unity-Loaded");
     setTimeout(() => { loadSettings(dioramascene); landingPlatform(); }, 1000);
@@ -69,6 +70,7 @@
     });
   }
   
+  function CreateButtonsAndShit() {
     createButton(
       'Button1',
       new BS.Vector3(6,1.1,-6),
@@ -104,6 +106,7 @@
       () => { console.log("Button 3 Clicked!"); BS.BanterScene.GetInstance().Gravity(new BS.Vector3(0, -9.8, 0)); },
       "Normal Gravity"
     );
+  }
 
 //   somerandomStartCrap();
 
